@@ -1,9 +1,14 @@
-
-import React from 'react';
+import React from "react";
+import {
+  Page,
+  Navbar,
+  BlockTitle,
+  Swiper,
+  SwiperSlide,
+  Block,
+} from "framework7-react";
 
 function TodayNew() {
-  
- 
   const data = [
     {
       color: "rgb(214, 63, 168)",
@@ -50,7 +55,42 @@ function TodayNew() {
       </div>
       <div className="newsman-block-content">
         <div className="swiper-container list-posts-full-bg-swipper">
-            {data.map(data =>
+          <BlockTitle>With additional parameters</BlockTitle>
+          <Swiper navigation speed={500} slidesPerView={3} spaceBetween={20}>
+            <SwiperSlide>
+            <div className="swiper-wrapper">
+                <div className="swiper-slide" data-color="#e44045">
+                  <div className="post-full-bg">
+                    <div className="post-author display-flex align-items-center">
+                      <div className="post-author-img bg-color-orange newsman-object-fit">
+                        <img src={data.url} alt="user1" />
+                      </div>
+                      <div className="post-author-infos margin-left-half">
+                        <span className="post-author-name display-block text-semibold">
+                          <a href="/profile/">{data.type}</a>
+                        </span>
+                        <span className="post-author-extra newsman-opacity">
+                          En vivo
+                        </span>
+                      </div>
+                    </div>
+                    <div className="post-content margin-top display-flex flex-direction-column justify-content-flex-end newsman-object-fit">
+                      <img src="./img/01.jpg" alt="1" />
+                      <div className="post-title">
+                        <a href="/single/">
+                          <h2 className="no-margin-bottom">
+                            {data.detail}
+                          </h2>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+           
+          </Swiper>
+          {/*   {data.map(data =>
                 <div  key= "{data}" className="swiper-wrapper">
                 <div className="swiper-slide" data-color="#e44045">
                   <div className="post-full-bg">
@@ -80,7 +120,7 @@ function TodayNew() {
                   </div>
                 </div>
               </div>
-            )}
+            )} */}
         </div>
       </div>
     </div>
