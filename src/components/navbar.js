@@ -12,7 +12,7 @@ function App() {
           </a>
         </div>
         <div className="right">
-          <a className="link icon-only">
+          <a href="!" className="link icon-only">
             <FeatherIcon icon="search"></FeatherIcon>
           </a>
         </div>
