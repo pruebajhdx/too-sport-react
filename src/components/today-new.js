@@ -7,7 +7,7 @@ function TodayNew() {
   const data = [
     {
       color: "rgb(214, 63, 168)",
-      type: "Futbol",
+      type: "test",
       url: "./img/01.jpg",
       detail: "Partidos de futbol, en vivo. Todos los partidos del día",
     },
