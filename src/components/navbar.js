@@ -8,7 +8,7 @@ function App() {
         <div className="left">
           <a href="!" className="link icon-only newsman-notification">
             <FeatherIcon icon="bell"></FeatherIcon>
-            <span className="badge color-red">6</span>
+            <span className="badge color-red">1</span>
           </a>
         </div>
         <div className="right">
