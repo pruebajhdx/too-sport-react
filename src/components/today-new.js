@@ -150,7 +150,7 @@ const ShowSlide = (data) => {
 const TodayNew = () => {
   return (
     <div className="newsman-block">
-      <DescriptionTitle></DescriptionTitle>
+      <DescriptionTitle/>
       <div className="newsman-block-content">
         <div className="swiper-container list-posts-full-bg-swipper">
           <Swiper
