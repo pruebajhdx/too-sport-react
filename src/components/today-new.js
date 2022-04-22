@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Swiper, SwiperSlide } from "framework7-react";
-import { $ } from "dom7"; //TODO testing library
+import  $$ from "dom7"; //TODO testing library
 
 const data = [
   {
@@ -123,7 +123,13 @@ const ShowSlide = (data) => {
       <div className="swiper-slide" data-color={data.props.color}>
         <div className="post-full-bg">
           <div className="post-author display-flex align-items-center">
-            <div className={"post-author-img " + data.props.iconColor + " newsman-object-fit"}>
+            <div
+              className={
+                "post-author-img " +
+                data.props.iconColor +
+                " newsman-object-fit"
+              }
+            >
               <img src={data.props.url} alt="user1" />
             </div>
             <div className="post-author-infos margin-left-half">
@@ -150,24 +156,25 @@ const ShowSlide = (data) => {
 const TodayNew = () => {
   return (
     <div className="newsman-block">
-      <DescriptionTitle/>
+      <DescriptionTitle />
       <div className="newsman-block-content">
         <div className="swiper-container list-posts-full-bg-swipper">
           <Swiper
             loop={true}
             spaceBetween={20}
             breakpoints={slideSize}
-            on={{
-              //No found the function of change background color :Slope
-              transitionEnd: () => {
-                let rgba = $(".swiper-slide-active").attr("data-color");
-                $(".newsman-page-gradient").css("background-color", rgba);
-              },
-            }}
-          >
+            onTransitionEnd={() => {
+              const obj ="#root > div > div.newsman-block > div.newsman-block-content > div > div > div";
+              let rgba = $$(obj)
+                .find(".swiper-slide-active")
+                .children(".swiper-wrapper")
+                .children(".swiper-slide")
+                .attr("data-color");
+              $$(".newsman-page-gradient").css("background-color", rgba);
+            }}>
             {data.map((data, idx) => (
               <SwiperSlide key={idx}>
-                <ShowSlide props = {data}/>
+                <ShowSlide props={data} />
               </SwiperSlide>
             ))}
           </Swiper>

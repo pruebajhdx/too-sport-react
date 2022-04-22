@@ -82,7 +82,6 @@ img {
 .not-found-page-gradient,
 .profile-page-gradient {
   background: linear-gradient(to bottom, rgba(18, 8, 16, 0), #120810); 
-  /* animation: colorchange 15s infinite;  */
   position: absolute;
   top: 0;
   left: 0;
@@ -93,14 +92,6 @@ img {
   -webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
   opacity: .6;
-}
-@keyframes colorchange
-{
-  0%   {background: rgb(214, 63, 168);}
-  25%  {background: rgb(190, 223, 222);}
-  50%  {background: #85a0c0;}
-  75%  {background: #bcb58b;}
-  100% {background: #fae7e5;}
 }
 
 .homepage-header .navbar,
