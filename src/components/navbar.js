@@ -1,6 +1,6 @@
 import FeatherIcon from 'feather-icons-react';
 
-function App() {
+const Navbar = () => {
   return (
     <div className="navbar navbar-transparent safe-areas">
       <div className="navbar-bg"></div>
@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default Navbar;
