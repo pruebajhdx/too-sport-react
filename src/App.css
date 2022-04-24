@@ -81,7 +81,7 @@ img {
 .newsman-page-gradient,
 .not-found-page-gradient,
 .profile-page-gradient {
-  background: linear-gradient(to bottom, rgba(18, 8, 16, 0), #120810); 
+  background: linear-gradient(to bottom, rgba(18, 8, 16, 0), #121212); 
   position: absolute;
   top: 0;
   left: 0;

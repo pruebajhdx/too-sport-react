@@ -3,12 +3,8 @@ import React from "react";
 const data = [
   {
     urlImage: "./img/09.jpg",
-  },
-  {
-    urlImage: "./img/10.jpg",
-  },
-  {
-    urlImage: "./img/11.jpg",
+    description: "Únete a nuestras redes y mantente informado",
+    date: "23/04/2022"
   },
 ];
 
@@ -17,7 +13,7 @@ const WrapperTitle = () => {
     <div className="newsman-block-title display-flex align-items-center justify-content-space-between">
       <div>
         <div className="block-title-medium no-margin block-title text-semibold">
-          Test
+          TooSport
         </div>
         <div className="newsman-opacity block-title no-margin newsman-block-subtitle">
           Actualización en cada momento
@@ -25,7 +21,7 @@ const WrapperTitle = () => {
       </div>
       <div className="newsman-badge">
         <a href="!" className="badge bg-color-white text-color-black">
-          NOTICIAS
+          AVISOS
         </a>
       </div>
     </div>
@@ -46,10 +42,10 @@ const ListWrapper = () => {
           <div className="blog-list-infos margin-right margin-top">
             <h2 className="margin-bottom-half no-margin-top">
               <a href="/single/">
-                Physical distancing. Image created by Samuel Rodriguez.
+                {data.description}
               </a>
             </h2>
-            <span>Sience . 26 May, 2020</span>
+            <span>{data.date}</span>
           </div>
         </div>
       ))}
