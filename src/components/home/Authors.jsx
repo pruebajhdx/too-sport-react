@@ -105,7 +105,7 @@ const ShowSlider = () => {
            <div className="author-card-img" data-color= {data.color} 
                 style={data.style}>
                <div className="newsman-badge">
-                 <a  className={data.color}>
+                 <a href="!" className={data.color}>
                   FOLLOW ME
                  </a>
                 </div>
