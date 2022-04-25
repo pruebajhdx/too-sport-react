@@ -3,6 +3,7 @@ import Navbar from "./components/home/Navbar";
 import TodayNew from "./components/home/TodayNew";
 import Authors from "./components/home/Authors";
 import HotTopic from "./components/home/HotTopic";
+import React from "react";
 
 
 function App() {

@@ -1,7 +1,8 @@
 import Navbar from "../../home/Navbar";
 import $$ from "dom7";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import LoadingSpinner from "../../loading/loading";
 
 const TitleInput = () => {
   return (
@@ -51,6 +52,7 @@ const InputSearch = () => {
 
   const [value, setValue] = useState("");
   const [football, setListFootball] = useState("");
+  const [loading, setLoading] = useState(null);
 
   const submitValue = {
     value: value,
@@ -58,15 +60,18 @@ const InputSearch = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
+      setLoading(true);
       axios
         .get(
           `http://www.too-sport.com/api/search/football/${submitValue.value}`
         )
         .then((res) => {
           setListFootball(res.data);
+          setLoading(false);
         });
     }
   };
+
   return (
     <div className="newsman-block">
       <TitleInput />
@@ -96,10 +101,66 @@ const InputSearch = () => {
             onKeyDown={handleKeyPress}
           />
         </div>
-        <ResultSearch data={football} />
+        <ResultSearch data={football} state={loading} />
       </div>
     </div>
   );
+};
+
+const ResultSearch = (props) => {
+  const [id, setId] = useState(null);
+  
+  if (props.state === true) {
+    return(<LoadingSpinner/>)
+  } 
+  
+  if (props.data.reponse !== undefined) {
+    if (props.data.reponse === "Search not found") {
+      return (
+        <div>
+          {" "}
+          <p>No se encontro nada</p>
+        </div>
+      );
+    }
+    return (
+      <div className="newsman-block">
+        <TitleResult />
+        <div className="newsman-block-content">
+          <div className="blog-list-wrapper">
+            {props.data.reponse.map((value, idx) => (
+              <div
+                key={idx}
+                className="blog-list display-flex align-items-start"
+              >
+                <div className="blog-list-img newsman-object-fit">
+                  <img src={value.imgTitle} alt="bl1" />
+                </div>
+                <div className="blog-list-infos margin-left">
+                  <div className="newsman-badge">
+                    <a
+                      href="!"
+                      className="badge color-purple text-color-white"
+                      onClick={() => setId(value.id)}
+                    >
+                      {`Servidor ${value.nameLinks}`}
+                    </a>
+                  </div>
+                  <h2 className="margin-bottom-half">
+                    <a href="!" onClick={() => setId(value.id)}>
+                      {value.name}
+                    </a>
+                  </h2>
+                  <span>{`${value.eventTime} Hrs,`} </span>
+                  <span>{`${new Date().toDateString()}.`}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 };
 
 const TitleResult = () => {
@@ -120,48 +181,6 @@ const TitleResult = () => {
       </div>
     </div>
   );
-};
-
-const ResultSearch = (props) => {
-  if (props.data.reponse !== undefined) {
-    if(props.data.reponse === "Search not found"){
-      return(<div> <p>No se encontro nada</p></div>)   
-    }
-    return (
-      <div className="newsman-block">
-        <TitleResult />
-        <div className="newsman-block-content">
-          <div className="blog-list-wrapper">
-            {props.data.reponse.map((value, idx) => (
-              <div key={idx} className="blog-list display-flex align-items-start">
-                <div className="blog-list-img newsman-object-fit">
-                  <img src={value.imgTitle} alt="bl1" />
-                </div>
-                <div className="blog-list-infos margin-left">
-                  <div className="newsman-badge">
-                    <a href="!" className="badge color-purple text-color-white">
-                      {'Servidor ' + value.nameLinks}
-                    </a>
-                  </div>
-                  <h2 className="margin-bottom-half">
-                    <a href="/single/">{value.name}</a>
-                  </h2>
-                  <span>{value.eventTime + ","} </span>
-                  <span>{ new Date().toDateString()+ "."}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> 
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <p>Nada</p>
-      </div>
-    );
-  }
 };
 
 const Search = () => {

@@ -93,8 +93,7 @@ const ShowSlider = (data) => {
         <div className="author-card">
           <div
             className={`author-card-img ${data.props.iconColor} margin-bottom padding-half`}
-            style={{ background: `url(${data.props.url})` }}
-          >
+            style={{ background: `url(${data.props.url})` }}>
             <div className="newsman-badge">
               <a href="!" className="badge bg-color-white text-color-black">
                 FOLLOW ME

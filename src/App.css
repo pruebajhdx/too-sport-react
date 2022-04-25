@@ -81,7 +81,9 @@ img {
 .newsman-page-gradient,
 .not-found-page-gradient,
 .profile-page-gradient {
-  background: linear-gradient(to bottom, rgba(18, 8, 16, 0), #121212); 
+  background: linear-gradient(to bottom, rgba(18, 8, 16, 0), #121212);  
+ /*  background-image: url("https://i0.wp.com/nett.mx/wp-content/uploads/nett-wb-hero-creatividad.png"); 
+  background-repeat: no-repeat; */
   position: absolute;
   top: 0;
   left: 0;
@@ -682,3 +684,38 @@ img {
   margin-bottom: 30px;
   padding-bottom: 30px;
 }
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  left: 0;
+  bottom: 0; 
+  right: 0; 
+  top: 200px; 
+  margin: auto; /* Centramos vertical y horizontalmente */
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #383636; /* Black */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.loader-background {
+  width: 100%;
+  height: 100%;
+  position: relative; /* Cambiamos de absolute a relative */
+  background: #eaeaea4a;
+  z-index: 9;
+}
+
+
+
+

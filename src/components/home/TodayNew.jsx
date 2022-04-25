@@ -5,7 +5,7 @@ import  $$ from "dom7"; //TODO testing library
 
 const data = [
   {
-    color: "rgb(214, 63, 168)",
+    color: "rgb(11, 12, 62)",
     type: "Futbol",
     iconColor: "bg-color-orange",
     url: "/img/user1.png",
