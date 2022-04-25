@@ -8,7 +8,8 @@ import Framework7 from "framework7/lite";
 import Framework7React from "framework7-react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Search from "./components/routes/Search";
+import Search from "./components/routes/search/Search";
+import SomethingWrong from "./components/home/404";
 
 // Init plugin
 Framework7.use(Framework7React);
@@ -21,11 +22,7 @@ root.render(
       <Route path="/search" element={<Search/>} />
       <Route
           path="*"
-          element={
-            <main style={{ padding: '1rem' }}>
-              <p>There's nothing here!</p>
-            </main>
-          }
+          element={<SomethingWrong/>}
         />
     </Routes>
   </BrowserRouter>

@@ -223,8 +223,9 @@ img {
 }
 
 .blog-list-img {
-  width: 120px;
-  height: 120px;
+  margin-top: 30px;
+  width: 30px;
+  height: 30px;
   border-radius: 10px;
   flex-shrink: 0;
   flex-wrap: nowrap;
@@ -251,8 +252,9 @@ img {
 
 @media only screen and (min-width: 576px) {
   .blog-list-img {
-    width: 150px;
-    height: 150px;
+    margin-top: 40px;
+    width: 30px;
+    height: 30px;
   }
 
   .blog-list-wrapper .blog-list-infos h2 {
@@ -264,8 +266,9 @@ img {
 
 @media only screen and (min-width: 768px) {
   .blog-list-img {
-    width: 160px;
-    height: 160px;
+    margin-top: 40px;
+    width: 30px;
+    height: 30px;
   }
 
   .blog-list-wrapper .blog-list-infos h2 {
