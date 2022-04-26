@@ -75,6 +75,24 @@ const slideSize = {
   1024: {
     slidesPerView: "3.5",
   },
+  1300: {
+    slidesPerView: "4.5",
+  },
+  1200: {
+    slidesPerView: "4.2",
+  },
+  1130: {
+    slidesPerView: "3.5",
+  },
+  1400: {
+    slidesPerView: "4.5",
+  },
+  1800: {
+    slidesPerView: "5.5",
+  },
+  1500: {
+    slidesPerView: "5.0",
+  },
   600: {
     slidesPerView: "2.2",
   },

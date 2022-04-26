@@ -437,6 +437,7 @@ img {
 .tags {
   flex-wrap: wrap;
   margin-top: 22px;
+  margin-bottom: 30px;
 }
 
 .tags .newsman-badge {
@@ -683,6 +684,10 @@ img {
 .big-list-single-post {
   margin-bottom: 30px;
   padding-bottom: 30px;
+}
+
+.bg-color-botton-active {
+  --f7-theme-color-bg-color: #ffe389;
 }
 
 @keyframes spinner {
