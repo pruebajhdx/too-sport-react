@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const SomethingWrong = () => {
   return (
-    <div class="not-found-page-content margin-top padding-top">
-      <h1 class="">404</h1>
+    <div className="not-found-page-content margin-top padding-top">
+      <h1 className="">404</h1>
       <h2>Look like you're lost in space</h2>
-      <p class="text-color-gray margin-left margin-right">
+      <p className="text-color-gray margin-left margin-right">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry.
       </p>

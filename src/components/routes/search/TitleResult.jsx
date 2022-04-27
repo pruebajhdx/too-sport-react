@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const TitleResult = () => {
+const TitleResult = (props) => {
     return (
       <div className="newsman-block-title display-flex align-items-center justify-content-space-between">
         <div>
@@ -9,7 +9,7 @@ const TitleResult = () => {
             Resultado
           </div>
           <div className="newsman-opacity block-title no-margin newsman-block-subtitle">
-            Filtro de busqueda
+            {props.title}
           </div>
         </div>
         <div className="newsman-badge">

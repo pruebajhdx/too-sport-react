@@ -212,7 +212,7 @@ img {
 .blog-list {
   padding-bottom: 20px;
   margin-top: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .blog-list:first-child {
@@ -719,6 +719,82 @@ img {
   position: relative; /* Cambiamos de absolute a relative */
   background: #eaeaea4a;
   z-index: 9;
+}
+
+
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(24, 23, 23, 0.63);
+}
+
+ul {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  list-style: none;
+}
+
+ul li {
+  color: #fff;
+  opacity: 0;
+  font-size: 20px;
+  margin: 26px 0;
+  animation-name: fadeIn;
+  animation-duration: 1s; /* アニメーションの長さ */
+  animation-fill-mode: forwards; /* アニメーション終了時のスタイルをアニメーション終了後でも適用させる */
+}
+
+ul li:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+ul li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+ul li:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+ul li:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+ul li:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cancel-button {
+  position: fixed;
+  left: 8px;
+  top: 8px;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  z-index: 1;
+}
+
+.cancel-button:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 
