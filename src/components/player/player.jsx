@@ -1,15 +1,18 @@
 import axios from "axios";
 import React, { useState } from "react";
+import FeatherIcon from "feather-icons-react";
 
 const Player = ({ statePlayer, id, setShowPlayer, type }) => {
-    const [channelUrl, setChannelUrl] = useState(null);
+    
+    const [url, setUrl] = useState(null);
+    const [loading, setLoading] = useState(false)
 
     if (type === "channel") {
         if (statePlayer === true) {
             axios
                 .get(`http://www.too-sport.com/api/channel/${String(id)}`)
                 .then((channel) => {
-                    setChannelUrl(channel.data.result);
+                 setUrl(channel.data.result);
                 });
         }
     }
@@ -19,31 +22,34 @@ const Player = ({ statePlayer, id, setShowPlayer, type }) => {
             axios
                 .get(`http://www.too-sport.com/api/streaming/football/${String(id)}`)
                 .then((football) => {
-                    setChannelUrl(football.data.result);
+                 setUrl(football.data.result);
                 });
         }
     }
 
-    if(channelUrl !== null) {
+    if(url !== null) {
         return (
-            <div className="newsman-block">
+            <div>
                 {statePlayer && (
                     <div className="menu">
                         <button
                             className="cancel-button"
-                            onClick={() => setShowPlayer(false)}
+                            onClick={() => {
+                                setShowPlayer(false)
+                                setLoading(false)
+                            }}
                         >
-                            ✕
+                            <FeatherIcon icon="x-circle" onLoad={() => setLoading(false)} ></FeatherIcon>
                         </button>
-                        <ul>
+                        <ul >
+                            { loading === false ? <span>Espera cargando reproductor</span> : null}
                             <iframe
                                 title="Player Streaming"
-                                src={channelUrl[0].frameStreaming} 
+                                src={url[0].frameStreaming} 
                                 name="tmaplayer"
-                                width="54%"
-                                height="601"
                                 frameBorder="no"
-                                scrolling="no"
+                                scrolling="yes"
+                                onLoad={() => setLoading(true)}
                                 allowFullScreen="allowfullscreen"
                             ></iframe>
                         </ul>

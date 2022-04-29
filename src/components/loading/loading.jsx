@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function LoadingSpinner() {
+const LoadingSpinner = () => {
   return (
     <div className="loader-background">
       <div className="loading-spinner ">
@@ -8,3 +8,5 @@ export default function LoadingSpinner() {
     </div>
   );
 }
+
+export default LoadingSpinner;

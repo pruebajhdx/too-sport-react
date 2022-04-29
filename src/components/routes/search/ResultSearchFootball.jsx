@@ -22,7 +22,7 @@ const ResultSearchFootball = (props) => {
       }
       return (
         <div className="newsman-block">
-          <TitleResult title = "Filtro de busqueda por partidos de futbol"/>
+          <TitleResult title = "Seleciona el de futbol"/>
           <div className="newsman-block-content">
             <div className="blog-list-wrapper">
               {props.data.reponse.map((value, idx) => (
