@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ListElement from "../../ListElement/ListElement";
+import ListElement from "../../elements/ElementList";
 import LoadingSpinner from "../../loading/loading";
 import Player from "../../player/player";
 import TitleResult from "./TitleResult";

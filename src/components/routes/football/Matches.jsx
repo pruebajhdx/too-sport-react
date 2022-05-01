@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import ListElement from "../../ListElement/ListElement";
+import ListElement from "../../elements/ElementList";
 import LoadingSpinnerPage from "../../loading/loadingPage";
 import Player from "../../player/player";
 import TitleResult from "../search/TitleResult";
@@ -25,7 +25,7 @@ const Matches = () => {
 
     useEffect(() => {
         getData(league, setData, setLoading);
-    }, []);
+    }, [league]);
 
     if(loading === true) {
         return <LoadingSpinnerPage detail='Cargando enlances de partidos'/>
@@ -37,10 +37,12 @@ const Matches = () => {
                 <div className="navbar navbar-transparent">
                     <div className="navbar-bg"></div>
                     <div className="navbar-inner">
-                        <div className="left" onClick={() => navigate(-1)}>
-                            <a  className="link back">
+                        <div className="left">
+                            {
+                            <span className="link back" onClick={() => navigate(-1)}>
                                 <i className="icon icon-back"></i>
-                            </a>
+                            </span> 
+                            }
                         </div>
                         <div className="title title-navbar-transparent">
                             Partidos disponibles
@@ -52,7 +54,7 @@ const Matches = () => {
                     <div className="newsman-block-content">
                         <div className="blog-list-wrapper">
                             {data.map((value, idx) => (
-                                <ListElement
+                                <ListElement key={idx}
                                     value={value}
                                     idx={idx}
                                     setId={setId}

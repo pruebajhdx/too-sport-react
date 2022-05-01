@@ -65,7 +65,7 @@ const Player = ({ statePlayer, id, setShowPlayer, type }) => {
                                 src={url[0].frameStreaming}
                                 name="tmaplayer"
                                 frameBorder="no"
-                                scrolling="yes"
+                                scrolling="no"
                                 onLoad={() => setLoading(true)}
                                 allowFullScreen="allowfullscreen"
                             ></iframe>
