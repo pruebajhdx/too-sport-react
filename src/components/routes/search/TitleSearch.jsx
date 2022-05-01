@@ -1,6 +1,6 @@
 import React from "react";
 
-const TitleInput = (props) => {
+const TitleInput = () => {
     return (
       <div className="newsman-block-title display-flex align-items-center justify-content-space-between">
         <div>

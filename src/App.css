@@ -89,16 +89,10 @@ img {
   left: 0;
   right: 0;
   height: 500px;
-  z-index: 2;
   transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
   opacity: .6;
-}
-
-.homepage-header .navbar,
-.newsman-block * {
-  z-index: 3;
 }
 
 .homepage-header {
@@ -212,7 +206,7 @@ img {
 .blog-list {
   padding-bottom: 20px;
   margin-top: 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
 .blog-list:first-child {
@@ -728,7 +722,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0px;
-  background: rgba(24, 23, 23, 0.63);
+  background: rgb(0, 0, 0);
 }
 
 
@@ -757,14 +751,6 @@ img {
 
 .cancel-button:hover {
   color: rgba(255, 255, 255, 0.8);
-}
-ul {
-  width: 100%;
-  position: absolute;
-  margin-top: 25px;
-  transform: translateY(-50%);
-  text-align: center;
-  list-style: none;
 }
 
 ul iframe {
@@ -998,7 +984,6 @@ ul iframe {
     width: 100%;
     position: absolute;
     margin-top: 25px;
-    text-align: center;
     transform: translateY(-50%);
     list-style: none;
     text-align: center;
@@ -1025,3 +1010,26 @@ ul iframe {
   }
 } 
 
+.loader-container p{
+  margin-top: 150px;
+  text-align: center;
+}
+ /* Works on Firefox  */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue #121212
+}
+
+ /* Works on Chrome, Edge, and Safari  */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background:#121212;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #5e5c5c;
+  border-radius: 5px;
+} 
