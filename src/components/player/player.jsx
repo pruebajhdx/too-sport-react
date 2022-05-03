@@ -28,13 +28,14 @@ const getData = (type, statePlayer, id, setUrl) => {
     }
 };
 
-const Player = ({ statePlayer, id, setShowPlayer, type }) => {
+const Player = ({ statePlayer, id, setShowPlayer, type, setPos }) => {
     const [url, setUrl] = useState(null);
     const [loading, setLoading] = useState(false);
 
     getData(type, statePlayer, id, setUrl);
-
+  
     if (url !== null) {
+        setPos(null)
         return (
             <div>
                 {statePlayer && (
@@ -54,12 +55,7 @@ const Player = ({ statePlayer, id, setShowPlayer, type }) => {
                         <ul>
                             {loading === false ? (
                                 <span>Espera cargando reproductor</span>
-                            ) : (
-                                <p> 
-                                    <b>Advertencia</b>: Algunos reproductores tienen ventanas
-                                    emergentes de publicidad.
-                                </p>
-                            )}
+                            ) : null}
                             <iframe
                                 title="Player Streaming"
                                 src={url[0].frameStreaming}

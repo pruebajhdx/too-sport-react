@@ -65,7 +65,7 @@ const data = [
         iconColor: "bg-color-lime",
         url: "/img/user7.png",
         slide: "/img/07.jpg",
-        route: "/",
+        route: "/channels",
         detail: "Canales en vivo, listas IPTV en HD y en SD",
     },
 ];

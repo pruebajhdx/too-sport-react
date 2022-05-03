@@ -37,6 +37,7 @@ const Ligues = () => {
                             <div className="newsman-opacity block-title no-margin newsman-block-subtitle">
                                 Partidos del día de hoy
                             </div>
+                            <p>Los eventos se pueden actualizar sin previo aviso, este pendiente de acuerdo a su zona horaria. Actualización día a día. </p>
                         </div>
                     </div>
                     <div className="newsman-block-content">

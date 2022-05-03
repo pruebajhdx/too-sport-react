@@ -1,64 +1,22 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { nameLeague } from "./nameLeague";
 
-const nameLeague = (value) => {
-    if (value === "slig") {
-        return (value = "Süper Lig (Turquía)");
-    }
-    if (value === "gsl") {
-        return (value = "Super League (Grecia)");
-    }
-    if (value === "mls") {
-        return (value = "Major League Soccer (EE.UU)");
-    }
-    if (value === "eks") {
-        return (value = "League Ekstraklasa (Polonia)");
-    }
-    if (value === "ered") {
-        return (value = "League Eredivisie (Países Bajos)");
-    }
-    if (value === "nos") {
-        return (value = "Liga Portugal");
-    }
-    if (value === "football") {
-        return (value = "Liga sin Identificar");
-    }
-    if (value === "2bundes") {
-        return (value = "League 2. Bundesliga");
-    }
-    if (value === "ssl") {
-        return (value = "Super League (Suiza) ");
-    }
-    if (value === "lal2") {
-        return (value = "LaLiga 2 División de España");
-    }
-    if (value === "jupiler") {
-        return (value = "League Pro League (Bélgica)");
-    }
-    if (value === "seraa") {
-        return (value = "League Serie A primera división (Italia)");
-    }
-    if (value === "uclw") {
-        return (value = `UEFA Womens Champions League`);
-    }
-    if (value === "lig11") {
-        return (value = "Ligue 1 (Francia)");
-    }
-    if (value === "lal") {
-        return (value = "La Primera División LaLiga (España) ");
-    }
-    if (value === "cdllp") {
-        return (value = "Copa de la Liga Profesional (Argentina)");
-    }
-    if (value === "bsera") {
-        return (value = "Brasileiro Série A (Brasil)");
-    }
-    if (value === "ligamx") {
-        return (value = "Primera División de México (Liga MX)");
-    }
+const getLeague = async (setLeagueSouth) => {
+    const data = await axios
+        .get("http://www.too-sport.com/api/streaming/football/southAmerican")
+        .then((res) => res.data);
+    setLeagueSouth(data);
 };
 
 const ListWrapper = ({ data }) => {
+    const [leagueSouth, setLeagueSouth] = useState(null);
+
+    useEffect(() => {
+        getLeague(setLeagueSouth);
+    }, []);
+
     return (
         <div className="blog-list-wrapper">
             {Object.keys(data.leagueAvailable).map((value, idx) => (
@@ -90,6 +48,36 @@ const ListWrapper = ({ data }) => {
                     </div>
                 </div>
             ))}
+
+            {leagueSouth !== undefined ? (
+                <div className="blog-list display-flex align-items-start">
+                    <div className="blog-list-img newsman-object-fit">
+                        <img
+                            src="https://de-academic.com/pictures/dewiki/67/CONMEBOL_logo.svg"
+                            alt="bl1"
+                        />
+                    </div>
+                    <div className="blog-list-infos margin-left">
+                        <div className="newsman-badge">
+                            <a
+                                href="!"
+                                className="badge color-purple text-color-white"
+                            >
+                                Sur America
+                            </a>
+                        </div>
+                        <h2 className="margin-bottom-half">
+                            <Link
+                                to={`/football/leagues/southAmerican`}
+                                className="external"
+                            >
+                                Ligas SurAmericanas
+                            </Link>
+                        </h2>
+                        <span>{`${new Date().toDateString()}.`}</span>
+                    </div>
+                </div>
+            ) : null}
         </div>
     );
 };

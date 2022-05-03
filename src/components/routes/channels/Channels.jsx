@@ -1,50 +1,37 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ListElement from "../../elements/ElementList";
 import LoadingSpinnerPage from "../../loading/loadingPage";
 import Player from "../../player/player";
 import TitleResult from "../search/TitleResult";
 
-const getData = async (league, setData, setLoading) => {
-    if (league === "southAmerican") {
-        console.log("funciona");
-        const data = await axios
-            .get(
-                "http://www.too-sport.com/api/streaming/football/southAmerican"
-            )
-            .then((res) => res.data.data);
-        setData(data);
-        setLoading(true);
-    } else {
-        const { result } = await axios
-            .get(`http://www.too-sport.com/api/search/leagues/${league}`)
-            .then((element) => element.data);
-        setData(result);
-        setLoading(true);
-    }
+const getData = async (setChannel, setLoading) => {
+    axios.get(`http://www.too-sport.com/api/channel`).then(
+        channel => {
+            setChannel(channel.data.result)
+            setLoading(true)
+        }
+    );
 };
 
-const Matches = () => {
-    let { league } = useParams();
+const Channels = () => {
     const navigate = useNavigate();
+    const [channel, setChannel] = useState(null);
+    const [loading, setLoading] = useState(false);
     const [id, setId] = useState(null);
     const [showPlayer, setShowPlayer] = useState(false);
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [pos, setPos] = useState(null);
+    const [pos, setPos] = useState(null)
 
     useEffect(() => {
-        getData(league, setData, setLoading);
-    }, [league]);
+        getData(setChannel, setLoading);
+    }, []);
 
-    if (loading === false) {
-        return <LoadingSpinnerPage detail="Cargando enlances de partidos" />;
+    if( loading === false){
+        return <LoadingSpinnerPage detail = "Cargando los canales"/>
     }
 
-    console.log(data);
-
-    if (data !== null) {
+    if(channel != null) {
         return (
             <div className="newsman-block">
                 <div className="navbar navbar-transparent">
@@ -52,21 +39,18 @@ const Matches = () => {
                     <div className="navbar-inner">
                         <div className="left">
                             {
-                                <span
-                                    className="link back"
-                                    onClick={() => navigate(-1)}
-                                >
-                                    <i className="icon icon-back"></i>
-                                </span>
+                            <span className="link back" onClick={() => navigate(-1)}>
+                                <i className="icon icon-back"></i>
+                            </span> 
                             }
                         </div>
                         <div className="title title-navbar-transparent">
-                            Partidos disponibles
+                            Canales disponibles
                         </div>
                     </div>
                 </div>
                 <div className="newsman-block no-border">
-                    <TitleResult title="Partidos disponibles por hoy" />
+                    <TitleResult title="Vive en vivo y en HD" />
                     <p>
                         <b>Advertencia:</b> Los reproductores pueden contener
                         ventanas emergentes, esto no es controlado por <b>TooSport</b> puesto que 
@@ -74,9 +58,8 @@ const Matches = () => {
                     </p>
                     <div className="newsman-block-content">
                         <div className="blog-list-wrapper">
-                            {data.map((value, idx) => (
-                                <ListElement
-                                    key={idx}
+                            {Object.keys(channel).map((value, idx) => (
+                                <ListElement key={idx}
                                     value={value}
                                     idx={idx}
                                     pos={pos}
@@ -91,15 +74,16 @@ const Matches = () => {
                                 statePlayer={showPlayer}
                                 setShowPlayer={setShowPlayer}
                                 setPos={setPos}
-                                type="football"
+                                type="channel"
                                 id={id}
                             />
                         ) : null}
                     </div>
                 </div>
             </div>
-        );
+        )
     }
+
 };
 
-export default Matches;
+export default Channels;

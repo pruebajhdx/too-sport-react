@@ -5,6 +5,7 @@ import SomethingWrong from "./components/home/404";
 import Player from "./components/player/player";
 import Ligues from "./components/routes/football/Ligues";
 import Matches from "./components/routes/football/Matches";
+import Channels from "./components/routes/channels/Channels";
 
 const Router = () => {
     return (
@@ -15,6 +16,7 @@ const Router = () => {
             <Route path="/player" element={<Player />} />
             <Route path="/football/leagues" element={<Ligues />} />
             <Route path="/football/leagues/:league" element={<Matches/>} />
+            <Route path="/channels" element={<Channels />} />
             <Route path="*" element={<SomethingWrong />} />
         </Routes>
         </BrowserRouter>
