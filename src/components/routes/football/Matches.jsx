@@ -10,14 +10,14 @@ const getData = async (league, setData, setLoading) => {
     if (league === "southAmerican") {
         const data = await axios
             .get(
-                "http://www.too-sport.com/api/streaming/football/southAmerican"
+                "https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican"
             )
             .then((res) => res.data.data);
         setData(data);
         setLoading(true);
     } else {
         const { result } = await axios
-            .get(`http://www.too-sport.com/api/search/leagues/${league}`)
+            .get(`https://api-tv-k1.herokuapp.com/api/search/leagues/${league}`)
             .then((element) => element.data);
         setData(result);
         setLoading(true);

@@ -6,7 +6,7 @@ import LoadingSpinnerPage from "../../loading/loadingPage";
 
 const getAnswer = async ( setLeagues, setLoading ) => {
     setLoading(true)
-    const { data } = await axios("http://www.too-sport.com/api/streaming/league");
+    const { data } = await axios("https://api-tv-k1.herokuapp.com/api/streaming/league");
     setLeagues(data);
     setLoading(false)
   };

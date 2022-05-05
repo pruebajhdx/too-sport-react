@@ -4,7 +4,7 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
     if (type === "channel") {
         if (statePlayer === true) {
             axios
-                .get(`http://www.too-sport.com/api/channel/${String(id)}`)
+                .get(`https://api-tv-k1.herokuapp.com/api/channel/${String(id)}`)
                 .then((channel) => {
                     setUrl(channel.data.result);
                 });
@@ -15,7 +15,7 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
         if (statePlayer === true) {
             axios
                 .get(
-                    `http://www.too-sport.com/api/streaming/football/${String(id)}`
+                    `https://api-tv-k1.herokuapp.com/api/streaming/football/${String(id)}`
                 )
                 .then((football) => {
                     setUrl(football.data.result);
@@ -26,7 +26,7 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
         if (statePlayer === true) {
             axios
                 .get(
-                    `http://www.too-sport.com/api/streaming/f1/${String(id)}`
+                    `https://api-tv-k1.herokuapp.com/api/streaming/f1/${String(id)}`
                 )
                 .then((f1) => {
                     setUrl(f1.data.result);

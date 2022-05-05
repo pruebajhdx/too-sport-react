@@ -8,7 +8,7 @@ import TitleResult from "../search/TitleResult";
 
 const getData = async (setData, setLoading ) => {
     const data = await axios
-        .get("http://www.too-sport.com/api/streaming/f1")
+        .get("https://api-tv-k1.herokuapp.com/api/streaming/f1")
         .then((res) => res.data.result);
     setData(data);
     setLoading(true)

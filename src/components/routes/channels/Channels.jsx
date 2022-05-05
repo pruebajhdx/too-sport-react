@@ -7,7 +7,7 @@ import Player from "../../player/player";
 import TitleResult from "../search/TitleResult";
 
 const getData = async (setChannel, setLoading) => {
-    axios.get(`http://www.too-sport.com/api/channel`).then(
+    axios.get(`https://api-tv-k1.herokuapp.com/api/channel`).then(
         channel => {
             setChannel(channel.data.result)
             setLoading(true)
