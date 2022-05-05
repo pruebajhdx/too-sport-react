@@ -18,6 +18,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="right">
+          <span>Too<b>Sport</b></span>
           <Link to="/search" className="link icon-only external">
             <FeatherIcon icon="search"></FeatherIcon>
           </Link>

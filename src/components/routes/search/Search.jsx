@@ -32,7 +32,7 @@ const InputSearch = () => {
           setLoading(true);
           axios
               .get(
-                  `http://www.too-sport.com/api/search/${valueBotton}/${value}`
+                  `http:/api-tv-k1.herokuapp.com/api/search/${valueBotton}/${value}`
               )
               .then((res) => {
                   e.target.value = "";
