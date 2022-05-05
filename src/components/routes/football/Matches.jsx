@@ -8,7 +8,6 @@ import TitleResult from "../search/TitleResult";
 
 const getData = async (league, setData, setLoading) => {
     if (league === "southAmerican") {
-        console.log("funciona");
         const data = await axios
             .get(
                 "http://www.too-sport.com/api/streaming/football/southAmerican"

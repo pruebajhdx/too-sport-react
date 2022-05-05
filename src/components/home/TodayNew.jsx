@@ -20,7 +20,7 @@ const data = [
         iconColor: "bg-color-blue",
         url: "/img/user3.png",
         slide: "/img/02.jpg",
-        route: "/",
+        route: "/f1",
         detail: "Vive emocionantes carreras de F1 en vivo y sus repeticiones.",
     },
     {

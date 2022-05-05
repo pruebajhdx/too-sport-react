@@ -1,21 +1,10 @@
 import React from "react";
+import { imageUrl, nameChampionship } from "./helper";
 
-const imageUrl = (value) => {
-    if (value === "before pe") {
-        return (value = "https://iconarchive.com/download/i48983/custom-icon-design/all-country-flag/Peru-Flag.ico");
-    }
-    if (value === "before co") {
-        return (value =
-            "https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/256/Colombia-Flag-icon.png");
-    }
-    if (value === undefined) {
-        return (value =
-            "https://www.pngplay.com/wp-content/uploads/9/Live-Free-Picture-PNG.png");
-    }
-};
+
 const ListElement = ({ value, idx, setId, setShowPlayer, pos, setPos }) => {
     return (
-        <div key={idx} className="blog-list display-flex align-items-start">
+        <div className="blog-list display-flex align-items-start">
             <div className="blog-list-img newsman-object-fit">
                 <img
                     src={
@@ -37,7 +26,7 @@ const ListElement = ({ value, idx, setId, setShowPlayer, pos, setPos }) => {
                         }}
                     >
                         {value.nameLinks === undefined
-                            ? `Servidor ${idx + 1}`
+                            ? nameChampionship(value.championship, idx)
                             : value.nameLinks}
                     </a>
                 </div>
@@ -53,7 +42,7 @@ const ListElement = ({ value, idx, setId, setShowPlayer, pos, setPos }) => {
                         {value.name === undefined ? value : value.name}
                     </a>
                     {idx === pos ? (
-                        <div class="lds-ring">
+                        <div className="lds-ring">
                             <div></div>
                             <div></div>
                             <div></div>

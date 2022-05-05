@@ -10,6 +10,40 @@ const getLeague = async (setLeagueSouth) => {
     setLeagueSouth(data);
 };
 
+const championshipSouthAmerican = (array) => {
+    if(array.data.length > 0) {
+        return(
+            <div className="blog-list display-flex align-items-start">
+            <div className="blog-list-img newsman-object-fit">
+                <img
+                    src="https://de-academic.com/pictures/dewiki/67/CONMEBOL_logo.svg"
+                    alt="bl1"
+                />
+            </div>
+            <div className="blog-list-infos margin-left">
+                <div className="newsman-badge">
+                    <a
+                        href="!"
+                        className="badge color-purple text-color-white"
+                    >
+                        Sur America
+                    </a>
+                </div>
+                <h2 className="margin-bottom-half">
+                    <Link
+                        to={`/football/leagues/southAmerican`}
+                        className="external"
+                    >
+                        Campeonatos Sur Americanos
+                    </Link>
+                </h2>
+                <span>{`${new Date().toDateString()}.`}</span>
+            </div>
+        </div>
+        )
+    }
+}
+
 const ListWrapper = ({ data }) => {
     const [leagueSouth, setLeagueSouth] = useState(null);
 
@@ -22,8 +56,7 @@ const ListWrapper = ({ data }) => {
             {Object.keys(data.leagueAvailable).map((value, idx) => (
                 <div
                     key={idx}
-                    className="blog-list display-flex align-items-start"
-                >
+                    className="blog-list display-flex align-items-start">
                     <div className="blog-list-img newsman-object-fit">
                         <img src={data.leagueAvailable[value]} alt="bl1" />
                     </div>
@@ -48,36 +81,7 @@ const ListWrapper = ({ data }) => {
                     </div>
                 </div>
             ))}
-
-            {leagueSouth !== undefined ? (
-                <div className="blog-list display-flex align-items-start">
-                    <div className="blog-list-img newsman-object-fit">
-                        <img
-                            src="https://de-academic.com/pictures/dewiki/67/CONMEBOL_logo.svg"
-                            alt="bl1"
-                        />
-                    </div>
-                    <div className="blog-list-infos margin-left">
-                        <div className="newsman-badge">
-                            <a
-                                href="!"
-                                className="badge color-purple text-color-white"
-                            >
-                                Sur America
-                            </a>
-                        </div>
-                        <h2 className="margin-bottom-half">
-                            <Link
-                                to={`/football/leagues/southAmerican`}
-                                className="external"
-                            >
-                                Ligas SurAmericanas
-                            </Link>
-                        </h2>
-                        <span>{`${new Date().toDateString()}.`}</span>
-                    </div>
-                </div>
-            ) : null}
+            {leagueSouth !== null ? championshipSouthAmerican(leagueSouth) : null}
         </div>
     );
 };

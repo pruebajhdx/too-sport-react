@@ -1,6 +1,15 @@
 
 
 const nameLeague = (value) => {
+    if(value === "ucl") {
+        return (value = "Uefa Champions League")
+    }
+    if(value === "jl") {
+        return (value = "J.League (Japon)")
+    }
+    if(value === "aleague") {
+        return (value = "A-League Men (Australia)")
+    }
     if(value === "league2") {
         return (value = "League Two (Inglaterra)")
     }
@@ -85,11 +94,23 @@ const nameLeague = (value) => {
     if (value === "cdllp") {
         return (value = "Copa de la Liga Profesional (Argentina)");
     }
+    if (value === "nwslcc") {
+        return (value = "NWSL Challenge Cup (Usa)");
+    }
+    if (value === "concacafcl") {
+        return (value = "CONCACAF Champions League");
+    }
     if (value === "bsera") {
         return (value = "Brasileiro Série A (Brasil)");
     }
     if (value === "ligamx") {
         return (value = "Primera División de México (Liga MX)");
+    }
+    if (value === "lib") {
+        return (value = "Copa Libertadores");
+    }
+    if (value === "sud") {
+        return (value = "Copa Sudamericana");
     }
 };
 

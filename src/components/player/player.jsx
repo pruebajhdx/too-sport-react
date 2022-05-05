@@ -1,38 +1,12 @@
-import axios from "axios";
 import React, { useState } from "react";
 import FeatherIcon from "feather-icons-react";
-
-const getData = (type, statePlayer, id, setUrl) => {
-    if (type === "channel") {
-        if (statePlayer === true) {
-            axios
-                .get(`http://www.too-sport.com/api/channel/${String(id)}`)
-                .then((channel) => {
-                    setUrl(channel.data.result);
-                });
-        }
-    }
-
-    if (type === "football") {
-        if (statePlayer === true) {
-            axios
-                .get(
-                    `http://www.too-sport.com/api/streaming/football/${String(
-                        id
-                    )}`
-                )
-                .then((football) => {
-                    setUrl(football.data.result);
-                });
-        }
-    }
-};
+import getDataPlayer from "./type"
 
 const Player = ({ statePlayer, id, setShowPlayer, type, setPos }) => {
     const [url, setUrl] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    getData(type, statePlayer, id, setUrl);
+    getDataPlayer(type, statePlayer, id, setUrl);
   
     if (url !== null) {
         setPos(null)
