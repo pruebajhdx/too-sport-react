@@ -61,6 +61,15 @@ const nameLeague = (value) => {
     if (value === "ered") {
         return (value = "League Eredivisie (Países Bajos)");
     }
+    if (value === "league1") {
+        return (value = "League One (Inglaterra)");
+    }
+    if (value === "uel") {
+        return (value = "Uefa Europa League");
+    }
+    if (value === "uecl") {
+        return (value = "UEFA Europa Conference League");
+    }
     if (value === "nos") {
         return (value = "Liga Portugal");
     }
