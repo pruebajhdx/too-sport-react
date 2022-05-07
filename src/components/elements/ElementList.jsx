@@ -53,7 +53,7 @@ const ListElement = ({ value, idx, setId, setShowPlayer, pos, setPos }) => {
                 {value.eventTime === undefined ? null : (
                     <span>{`${value.eventTime} Hrs,`}</span>
                 )}
-                <span>{`${new Date().toDateString()}.`}</span>
+                <span>{` ${new Date().toDateString()}. Actualizado`}</span>
             </div>
         </div>
     );
