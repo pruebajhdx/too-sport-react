@@ -33,6 +33,20 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
                 });
         }
     }
+
+    if (type === "mlb") {
+        if (statePlayer === true) {
+            axios
+                .get(
+                    `https://api-tv-k1.herokuapp.com/api/streaming/baseball/${String(id)}`
+                )
+                .then((f1) => {
+                    setUrl(f1.data.result);
+                });
+        }
+    }
+
+    
 };
 
 

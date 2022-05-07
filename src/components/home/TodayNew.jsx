@@ -56,7 +56,7 @@ const data = [
         iconColor: "bg-color-teal",
         url: "/img/user6.png",
         slide: "/img/06.jpg",
-        route: "/",
+        route: "/mlb",
         detail: "Vive la MLB en vivo con los eventos del día",
     },
     {

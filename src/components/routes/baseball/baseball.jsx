@@ -1,38 +1,32 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import ListElement from "../../elements/ElementList";
 import Navbar from "../../home/Navbar";
-import LoadingSpinnerPage from "../../loading/loadingPage";
 import Player from "../../player/player";
 import TitleResult from "../search/TitleResult";
-import AccordionDateF1 from "./DateF1";
+import MatchesMlb from "./MatchesMlb";
+import LoadingSpinnerPage from "../../loading/loadingPage";
 
-const getData = async (setData, setLoading, setDates) => {
-    const data = await axios
-        .get("https://api-tv-k1.herokuapp.com/api/streaming/f1")
-        .then((res) => res.data.result);
-    const date = await axios
-        .get("https://api-tv-k1.herokuapp.com/api/streaming/f1/date")
-        .then((res) => res.data.result);
+const getDataBaseball = async (setData, setLoading) => {
+    const { data } = await axios
+        .get("https://api-tv-k1.herokuapp.com/api/streaming/baseball")
+        .then((res) => res.data);
     setData(data);
-    setDates(date);
-    setLoading(true);
+    setLoading(true)
 };
 
-const F1 = () => {
+const Baseball = () => {
     const [id, setId] = useState(null);
     const [data, setData] = useState(null);
-    const [dates, setDates] = useState(null);
     const [pos, setPos] = useState(null);
     const [loading, setLoading] = useState(false);
     const [showPlayer, setShowPlayer] = useState(false);
 
     useEffect(() => {
-        getData(setData, setLoading, setDates);
-    }, []);
+        getDataBaseball(setData, setLoading);
+    },[]);
 
     if (loading === false) {
-        return <LoadingSpinnerPage detail="Cargando enlaces de Eventos F1" />;
+        return <LoadingSpinnerPage detail="Cargando eventos de la MLB" />;
     }
 
     if (data !== null) {
@@ -40,18 +34,21 @@ const F1 = () => {
             <div className="page-content">
                 <Navbar />
                 <div className="newsman-block">
-                    <TitleResult title="Eventos de F1 en vivo y directo" />
+                    <TitleResult title="Eventos de la MLB en vivo y directo" />
                     <p>
                         <b>Advertencia:</b> Los reproductores pueden contener
                         ventanas emergentes, esto no es controlado por{" "}
                         <b>TooSport</b> puesto que son enlaces recopilados de
                         otros servidores externos.
                     </p>
-                    <AccordionDateF1 title="Horarios de eventos" dates = {dates}/>
+                 {/*    <AccordionDateF1
+                        title="Horarios de eventos"
+                        dates={dates}
+                    /> */}
                     <div className="newsman-block-content">
                         <div className="blog-list-wrapper">
                             {data.map((value, idx) => (
-                                <ListElement
+                                <MatchesMlb
                                     key={idx}
                                     value={value}
                                     idx={idx}
@@ -67,7 +64,7 @@ const F1 = () => {
                                 statePlayer={showPlayer}
                                 setShowPlayer={setShowPlayer}
                                 setPos={setPos}
-                                type="mlb"
+                                type="f1"
                                 id={id}
                             />
                         ) : null}
@@ -78,4 +75,4 @@ const F1 = () => {
     }
 };
 
-export default F1;
+export default Baseball;
