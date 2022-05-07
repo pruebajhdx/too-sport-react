@@ -2,11 +2,11 @@
 const imageUrl = (value) => {
     if (value === "before pe") {
         return (value =
-            "https://iconarchive.com/download/i48983/custom-icon-design/all-country-flag/Peru-Flag.ico");
+            "https://upload.wikimedia.org/wikipedia/commons/6/62/Liga_de_F%C3%BAtbol_Profesional_-_Liga_1_%28Per%C3%BA%29.jpg");
     }
     if (value === "before co") {
         return (value =
-            "https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/256/Colombia-Flag-icon.png");
+            "https://1.bp.blogspot.com/--Rhlz92Or5E/X2P5ydGx6iI/AAAAAAABgLo/eAFUsxe_ggorjC0h7W7IC3RcM6-PT3iTgCLcBGAsYHQ/s16000/Liga%2BBetPlay.png");
     }
     if(value === "before lib") {
         return (value =

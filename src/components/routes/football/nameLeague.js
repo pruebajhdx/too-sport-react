@@ -88,6 +88,12 @@ const nameLeague = (value) => {
     if (value === "jupiler") {
         return (value = "League Pro League (Bélgica)");
     }
+    if (value === "cdf") {
+        return (value = "Coupe de France");
+    }
+    if (value === "cafcc") {
+        return (value = "CAF Champions League (Africa)");
+    }
     if (value === "seraa") {
         return (value = "League Serie A primera división (Italia)");
     }
@@ -104,6 +110,9 @@ const nameLeague = (value) => {
         return (value = "Copa de la Liga Profesional (Argentina)");
     }
     if (value === "nwslcc") {
+        return (value = "NWSL Challenge Cup (Usa)");
+    }
+    if (value === "nwsl1") {
         return (value = "NWSL Challenge Cup (Usa)");
     }
     if (value === "concacafcl") {
