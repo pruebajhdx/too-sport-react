@@ -19,7 +19,7 @@ const MatchesMlb= ({ value, idx, setId, setShowPlayer, pos, setPos }) => {
                             setShowPlayer(true);
                         }}
                     >
-                        evento MBL 
+                        evento Mlb 
                     </a>
                 </div>
                 <h2 className="margin-bottom-half ">

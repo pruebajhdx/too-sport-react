@@ -40,8 +40,8 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
                 .get(
                     `https://api-tv-k1.herokuapp.com/api/streaming/baseball/${String(id)}`
                 )
-                .then((f1) => {
-                    setUrl(f1.data.result);
+                .then((mlb) => {
+                    setUrl(mlb.data.responseData);
                 });
         }
     }
