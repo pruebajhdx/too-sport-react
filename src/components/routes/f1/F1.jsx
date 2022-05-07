@@ -67,7 +67,7 @@ const F1 = () => {
                                 statePlayer={showPlayer}
                                 setShowPlayer={setShowPlayer}
                                 setPos={setPos}
-                                type="mlb"
+                                type="f1"
                                 id={id}
                             />
                         ) : null}
