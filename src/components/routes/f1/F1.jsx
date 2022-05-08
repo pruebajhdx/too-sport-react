@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ListElement from "../../elements/ElementList";
+import ClockGMT from "../Clock";
 import Navbar from "../../home/Navbar";
 import LoadingSpinnerPage from "../../loading/loadingPage";
 import Player from "../../player/player";
@@ -47,6 +48,7 @@ const F1 = () => {
                         <b>TooSport</b> puesto que son enlaces recopilados de
                         otros servidores externos.
                     </p>
+                    <ClockGMT/>
                     <AccordionDateF1 title="Horarios de eventos" dates = {dates}/>
                     <div className="newsman-block-content">
                         <div className="blog-list-wrapper">

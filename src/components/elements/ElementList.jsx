@@ -34,6 +34,7 @@ const ListElement = ({ value, idx, setId, setShowPlayer, pos, setPos }) => {
                     <a
                         href="!"
                         onClick={() => {
+                            console.log(value.id)
                             setId(value.id === undefined ? value : value.id);
                             setPos(idx);
                             setShowPlayer(true);

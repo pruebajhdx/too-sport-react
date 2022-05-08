@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import ListElement from "../../elements/ElementList";
 import LoadingSpinnerPage from "../../loading/loadingPage";
 import Player from "../../player/player";
+import ClockGMT from "../Clock";
 import TitleResult from "../search/TitleResult";
 
 const getData = async (league, setData, setLoading) => {
@@ -40,9 +41,6 @@ const Matches = () => {
     if (loading === false) {
         return <LoadingSpinnerPage detail="Cargando enlances de partidos" />;
     }
-
-    console.log(data);
-
     if (data !== null) {
         return (
             <div className="newsman-block">
@@ -71,6 +69,7 @@ const Matches = () => {
                         ventanas emergentes, esto no es controlado por <b>TooSport</b> puesto que 
                         son enlaces recopilados de otros servidores externos.
                     </p>
+                    <ClockGMT/>
                     <div className="newsman-block-content">
                         <div className="blog-list-wrapper">
                             {data.map((value, idx) => (
@@ -90,7 +89,7 @@ const Matches = () => {
                                 statePlayer={showPlayer}
                                 setShowPlayer={setShowPlayer}
                                 setPos={setPos}
-                                type="football"
+                                type={league ==="southAmerican" ? "south" : "football"}
                                 id={id}
                             />
                         ) : null}

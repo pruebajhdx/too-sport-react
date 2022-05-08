@@ -22,6 +22,18 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
                 });
         }
     }
+    if (type === "south") {
+        console.log(id)
+        if (statePlayer === true) {
+            axios
+                .get(
+                    `https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican/${String(id)}`
+                )
+                .then((south) => {
+                    setUrl(south.data.data);
+                });
+        }
+    }
     if (type === "f1") {
         if (statePlayer === true) {
             axios
