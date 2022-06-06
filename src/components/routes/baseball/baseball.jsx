@@ -8,7 +8,11 @@ import LoadingSpinnerPage from "../../loading/loadingPage";
 
 const getDataBaseball = async (setData, setLoading) => {
     const { data } = await axios
-        .get("https://api-tv-k1.herokuapp.com/api/streaming/baseball")
+        .get("https://api-tv-k1.herokuapp.com/api/streaming/baseball", {
+            headers: {
+                key: 'Mmjj5566?apiTvK1@too.sport.com'
+            }
+        })
         .then((res) => res.data);
     setData(data);
     setLoading(true)

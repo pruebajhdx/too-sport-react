@@ -10,10 +10,18 @@ import AccordionDateF1 from "./DateF1";
 
 const getData = async (setData, setLoading, setDates) => {
     const data = await axios
-        .get("https://api-tv-k1.herokuapp.com/api/streaming/f1")
+        .get("https://api-tv-k1.herokuapp.com/api/streaming/f1",{
+            headers: {
+                key: 'Mmjj5566?apiTvK1@too.sport.com'
+            }
+        })
         .then((res) => res.data.result);
     const date = await axios
-        .get("https://api-tv-k1.herokuapp.com/api/streaming/f1/date")
+        .get("https://api-tv-k1.herokuapp.com/api/streaming/f1/date", {
+            headers: {
+                key: 'Mmjj5566?apiTvK1@too.sport.com'
+            }
+        })
         .then((res) => res.data.result);
     setData(data);
     setDates(date);
