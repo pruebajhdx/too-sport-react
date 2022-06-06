@@ -133,8 +133,8 @@ const nameLeague = (value) => {
     if (value === "friendly") {
         return (value = "International Friendly");
     }
-    if (value === "eurou21") {
-        return (value = "UEFA European Under");
+    if (value === "unl") {
+        return (value = "UEFA Nations League");
     }
     if (value === "eurou21") {
         return (value = "UEFA European Under");
