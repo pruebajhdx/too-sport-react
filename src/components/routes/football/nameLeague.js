@@ -130,6 +130,21 @@ const nameLeague = (value) => {
     if (value === "sud") {
         return (value = "Copa Sudamericana");
     }
+    if (value === "friendly") {
+        return (value = "International Friendly");
+    }
+    if (value === "eurou21") {
+        return (value = "UEFA European Under");
+    }
+    if (value === "eurou21") {
+        return (value = "UEFA European Under");
+    }
+    if (value === "afcon") {
+        return (value = "Africa Cup of Nations Qual.");
+    }
+    if (value === "undefined") {
+        return (value = "Liga profesional de futbol.");
+    }
 };
 
 module.exports = {
