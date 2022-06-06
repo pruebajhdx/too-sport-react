@@ -11,7 +11,11 @@ const getData = async (league, setData, setLoading) => {
     if (league === "southAmerican") {
         const data = await axios
             .get(
-                "https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican"
+                "https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican", {
+                    headers: {
+                        key: 'Mmjj5566?apiTvK1@too.sport.com'
+                    }
+                }
             )
             .then((res) => res.data.data);
         setData(data);

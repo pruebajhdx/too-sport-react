@@ -12,7 +12,7 @@ const Player = ({ statePlayer, id, setShowPlayer, type, setPos }) => {
   
     if (url !== null) {
         setPos(null)
-        console.log(url[0])
+        console.log(url)
         return (
             <div>
                 {statePlayer && (

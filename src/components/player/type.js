@@ -4,7 +4,11 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
     if (type === "channel") {
         if (statePlayer === true) {
             axios
-                .get(`https://api-tv-k1.herokuapp.com/api/channel/${String(id)}`)
+                .get(`https://api-tv-k1.herokuapp.com/api/channel/${String(id)}`, {
+                    headers: {
+                        key: 'Mmjj5566?apiTvK1@too.sport.com'
+                    }
+                })
                 .then((channel) => {
                     setUrl(channel.data.result);
                 });
@@ -15,7 +19,11 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
         if (statePlayer === true) {
             axios
                 .get(
-                    `https://api-tv-k1.herokuapp.com/api/streaming/football/${String(id)}`
+                    `https://api-tv-k1.herokuapp.com/api/streaming/football/${String(id)}`, {
+                        headers: {
+                            key: 'Mmjj5566?apiTvK1@too.sport.com'
+                        }
+                    }
                 )
                 .then((football) => {
                     setUrl(football.data.result);
@@ -27,7 +35,11 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
         if (statePlayer === true) {
             axios
                 .get(
-                    `https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican/${String(id)}`
+                    `https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican/${String(id)}`, {
+                        headers: {
+                            key: 'Mmjj5566?apiTvK1@too.sport.com'
+                        }
+                    }
                 )
                 .then((south) => {
                     setUrl(south.data.data);
@@ -38,7 +50,11 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
         if (statePlayer === true) {
             axios
                 .get(
-                    `https://api-tv-k1.herokuapp.com/api/streaming/f1/${String(id)}`
+                    `https://api-tv-k1.herokuapp.com/api/streaming/f1/${String(id)}`, {
+                        headers: {
+                            key: 'Mmjj5566?apiTvK1@too.sport.com'
+                        }
+                    }
                 )
                 .then((f1) => {
                     setUrl(f1.data.result);
@@ -50,7 +66,12 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
         if (statePlayer === true) {
             axios
                 .get(
-                    `https://api-tv-k1.herokuapp.com/api/streaming/baseball/${String(id)}`
+                    `https://api-tv-k1.herokuapp.com/api/streaming/baseball/${String(id)}`, 
+                    {
+                        headers: {
+                            key: 'Mmjj5566?apiTvK1@too.sport.com'
+                        }
+                    }
                 )
                 .then((mlb) => {
                     setUrl(mlb.data.responseData);

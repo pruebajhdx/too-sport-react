@@ -5,7 +5,11 @@ import { nameLeague } from "./nameLeague";
 
 const getLeague = async (setLeagueSouth) => {
     const data = await axios
-        .get("https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican")
+        .get("https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican", {
+            headers: {
+                key: 'Mmjj5566?apiTvK1@too.sport.com'
+            }
+        })
         .then((res) => res.data);
     setLeagueSouth(data);
 };
