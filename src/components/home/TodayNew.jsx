@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "framework7-react";
 import $$ from "dom7"; //TODO testing library
 import { Link } from "react-router-dom";
 
+console.log(process.env)
 const data = [
     {
         color: "rgb(11, 12, 62)",
