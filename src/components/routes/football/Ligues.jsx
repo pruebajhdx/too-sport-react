@@ -8,7 +8,7 @@ const getAnswer = async ( setLeagues, setLoading ) => {
     setLoading(true)
     const { data } = await axios("https://api-tv-k1.herokuapp.com/api/streaming/league", {
         headers: {
-            key: 'Mmjj5566?apiTvK1@too.sport.com'
+            key: process.env.REACT_APP_APITV_PASS
         }
     });
     setLeagues(data);

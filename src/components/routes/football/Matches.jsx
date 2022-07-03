@@ -11,10 +11,11 @@ const getData = async (league, setData, setLoading) => {
     if (league === "southAmerican") {
         const data = await axios
             .get(
-                "https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican", {
+                "https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican",
+                {
                     headers: {
-                        key: 'Mmjj5566?apiTvK1@too.sport.com'
-                    }
+                        key: process.env.REACT_APP_APITV_PASS,
+                    },
                 }
             )
             .then((res) => res.data.data);
@@ -22,7 +23,14 @@ const getData = async (league, setData, setLoading) => {
         setLoading(true);
     } else {
         const { result } = await axios
-            .get(`https://api-tv-k1.herokuapp.com/api/search/leagues/${league}`)
+            .get(
+                `https://api-tv-k1.herokuapp.com/api/search/leagues/${league}`,
+                {
+                    headers: {
+                        key: process.env.REACT_APP_APITV_PASS,
+                    },
+                }
+            )
             .then((element) => element.data);
         setData(result);
         setLoading(true);
@@ -70,10 +78,11 @@ const Matches = () => {
                     <TitleResult title="Partidos disponibles por hoy" />
                     <p>
                         <b>Advertencia:</b> Los reproductores pueden contener
-                        ventanas emergentes, esto no es controlado por <b>TooSport</b> puesto que 
-                        son enlaces recopilados de otros servidores externos.
+                        ventanas emergentes, esto no es controlado por{" "}
+                        <b>TooSport</b> puesto que son enlaces recopilados de
+                        otros servidores externos.
                     </p>
-                    <ClockGMT/>
+                    <ClockGMT />
                     <div className="newsman-block-content">
                         <div className="blog-list-wrapper">
                             {data.map((value, idx) => (
@@ -93,7 +102,11 @@ const Matches = () => {
                                 statePlayer={showPlayer}
                                 setShowPlayer={setShowPlayer}
                                 setPos={setPos}
-                                type={league ==="southAmerican" ? "south" : "football"}
+                                type={
+                                    league === "southAmerican"
+                                        ? "south"
+                                        : "football"
+                                }
                                 id={id}
                             />
                         ) : null}

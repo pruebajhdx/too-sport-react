@@ -12,14 +12,14 @@ const getData = async (setData, setLoading, setDates) => {
     const data = await axios
         .get("https://api-tv-k1.herokuapp.com/api/streaming/f1",{
             headers: {
-                key: 'Mmjj5566?apiTvK1@too.sport.com'
+                key: process.env.REACT_APP_APITV_PASS
             }
         })
         .then((res) => res.data.result);
     const date = await axios
         .get("https://api-tv-k1.herokuapp.com/api/streaming/f1/date", {
             headers: {
-                key: 'Mmjj5566?apiTvK1@too.sport.com'
+                key: process.env.REACT_APP_APITV_PASS
             }
         })
         .then((res) => res.data.result);

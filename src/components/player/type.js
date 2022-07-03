@@ -6,7 +6,7 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
             axios
                 .get(`https://api-tv-k1.herokuapp.com/api/channel/${String(id)}`, {
                     headers: {
-                        key: 'Mmjj5566?apiTvK1@too.sport.com'
+                        key: process.env.REACT_APP_APITV_PASS
                     }
                 })
                 .then((channel) => {
@@ -21,7 +21,7 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
                 .get(
                     `https://api-tv-k1.herokuapp.com/api/streaming/football/${String(id)}`, {
                         headers: {
-                            key: 'Mmjj5566?apiTvK1@too.sport.com'
+                            key: process.env.REACT_APP_APITV_PASS
                         }
                     }
                 )
@@ -37,7 +37,7 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
                 .get(
                     `https://api-tv-k1.herokuapp.com/api/streaming/football/southAmerican/${String(id)}`, {
                         headers: {
-                            key: 'Mmjj5566?apiTvK1@too.sport.com'
+                            key: process.env.REACT_APP_APITV_PASS
                         }
                     }
                 )
@@ -52,7 +52,7 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
                 .get(
                     `https://api-tv-k1.herokuapp.com/api/streaming/f1/${String(id)}`, {
                         headers: {
-                            key: 'Mmjj5566?apiTvK1@too.sport.com'
+                            key: process.env.REACT_APP_APITV_PASS
                         }
                     }
                 )
@@ -69,7 +69,7 @@ const getDataPlayer = (type, statePlayer, id, setUrl) => {
                     `https://api-tv-k1.herokuapp.com/api/streaming/baseball/${String(id)}`, 
                     {
                         headers: {
-                            key: 'Mmjj5566?apiTvK1@too.sport.com'
+                            key: process.env.REACT_APP_APITV_PASS
                         }
                     }
                 )

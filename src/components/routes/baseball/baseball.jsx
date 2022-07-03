@@ -10,7 +10,7 @@ const getDataBaseball = async (setData, setLoading) => {
     const { data } = await axios
         .get("https://api-tv-k1.herokuapp.com/api/streaming/baseball", {
             headers: {
-                key: 'Mmjj5566?apiTvK1@too.sport.com'
+                key: process.env.REACT_APP_APITV_PASS
             }
         })
         .then((res) => res.data);
