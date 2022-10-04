@@ -2,21 +2,20 @@ import React, { useEffect } from "react";
 
 const timeNow = () => {
     const today = new Date();
-    let hour = today.getUTCHours();
-    let min = today.getUTCMinutes();
-    let sec = today.getUTCSeconds();
+  
     const clock = document.getElementById("clock");
-    if (hour < 10) {
-        hour = "0" + hour;
-    }
-    if (min < 10) {
-        min = "0" + min;
-    }
-    if (sec < 10) {
-        sec = "0" + sec;
-    }
+    const timeZone = today.toLocaleString("en-US", {
+        timeZone: "Europe/London",
+        hourCycle: 'h23',
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
 
-    if(clock !== null) return clock.textContent = `${hour + 1} : ${min} : ${sec}`;
+    const hr = Number(timeZone.slice(0, 2))
+    const hour = hr > 12 ? "PM" : "AM";
+    if(clock !== null) return clock.textContent = `${timeZone} ${hour}`;
+    
 };
 
 setInterval(timeNow, 1000);

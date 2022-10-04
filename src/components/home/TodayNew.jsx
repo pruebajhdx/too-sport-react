@@ -29,7 +29,7 @@ const data = [
         iconColor: "bg-color-red",
         url: "/img/user3.png",
         slide: "/img/03.jpg",
-        route: "/",
+        route: "/motors",
         detail: "Carreras de todos los eventos motorsport en vivo al día.",
     },
     {
@@ -43,11 +43,20 @@ const data = [
     },
     {
         color: "rgb(2 36 54)",
+        type: "NBA",
+        iconColor: "bg-color-purple",
+        url: "/img/user5.png",
+        slide: "/img/24.jpg",
+        route: "/",
+        detail: "Partidos de la NBA en vivo, eventos del día.",
+    },
+    {
+        color: "rgb(2 36 54)",
         type: "Boxeo",
         iconColor: "bg-color-purple",
         url: "/img/user5.png",
         slide: "/img/05.jpg",
-        route: "/",
+        route: "/boxing",
         detail: "Peleas del mejor boxeo en vivo, eventos del día.",
     },
     {
@@ -59,7 +68,7 @@ const data = [
         route: "/mlb",
         detail: "Vive la MLB en vivo con los eventos del día",
     },
-    {
+   /*  {
         color: "#7a5e75",
         type: "Canales",
         iconColor: "bg-color-lime",
@@ -67,7 +76,7 @@ const data = [
         slide: "/img/07.jpg",
         route: "/channels",
         detail: "Canales en vivo, listas IPTV en HD y en SD",
-    },
+    }, */
 ];
 
 const slideSize = {
@@ -175,16 +184,14 @@ const ShowSlide = (data) => {
                     <div className="post-content margin-top display-flex flex-direction-column justify-content-flex-end newsman-object-fit">
                         <img src={data.props.slide} alt="1" />
                         <div className="post-title">
-                           
-                                <h2 className="no-margin-bottom">
-                                    <Link
-                                        to={data.props.route}
-                                        className="external"
-                                    >
-                                        {data.props.detail}
-                                    </Link>
-                                </h2>
-                         
+                            <h2 className="no-margin-bottom">
+                                <Link
+                                    to={data.props.route}
+                                    className="external"
+                                >
+                                    {data.props.detail}
+                                </Link>
+                            </h2>
                         </div>
                     </div>
                 </div>

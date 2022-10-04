@@ -1,7 +1,7 @@
 import React from "react";
 
-const MatchesMlb= ({ value, idx, setId, setShowPlayer, pos, setPos }) => {
-    return (
+const MatchesBoxing = ( {value, idx, setId, setShowPlayer, pos, setPos}) => {
+    return(
         <div className="blog-list display-flex align-items-start">
             <div className="blog-list-img newsman-object-fit">
                 <img
@@ -46,7 +46,8 @@ const MatchesMlb= ({ value, idx, setId, setShowPlayer, pos, setPos }) => {
                 <span>{`${new Date().toDateString()}.`}</span>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default MatchesMlb;
+
+export default MatchesBoxing;

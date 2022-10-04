@@ -4,6 +4,7 @@ import "./Style.css";
 const AccordionDateF1 = ({ title, dates }) => {
     const [isOpen, setOpen] = useState(false);
 
+    console.log(dates)
     return (
         <div className="accordion-wrapper">
             <div

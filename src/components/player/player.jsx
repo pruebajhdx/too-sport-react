@@ -12,7 +12,6 @@ const Player = ({ statePlayer, id, setShowPlayer, type, setPos }) => {
   
     if (url !== null) {
         setPos(null)
-        console.log(url)
         return (
             <div>
                 {statePlayer && (

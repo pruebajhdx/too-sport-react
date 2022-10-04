@@ -8,6 +8,8 @@ import Matches from "./components/routes/football/Matches";
 import Channels from "./components/routes/channels/Channels";
 import Baseball from "./components/routes/baseball/baseball";
 import F1 from "./components/routes/f1/F1";
+import Boxing from "./components/routes/boxing/boxing";
+import Motors from "./components/routes/motorsport/Motors";
 
 const Router = () => {
     return (
@@ -21,6 +23,8 @@ const Router = () => {
                 <Route path="/channels" element={<Channels />} />
                 <Route path="/mlb" element={<Baseball />} />
                 <Route path="/f1" element={<F1 />} />
+                <Route path="/boxing" element={<Boxing/>}/>
+                <Route path="/motors" element={<Motors/>}/>
                 <Route path="*" element={<SomethingWrong />} />
             </Routes>
         </BrowserRouter>
