@@ -12,7 +12,7 @@ const data = [
         url: "/img/user1.png",
         slide: "/img/01.jpg",
         route: "/football/leagues",
-        detail: "Partidos de futbol, en vivo. Todos los partidos del día.",
+        detail: "Partidos de futbol, en vivo y en directo.",
     },
     {
         color: "rgb(205 39 73)",
@@ -21,7 +21,7 @@ const data = [
         url: "/img/user3.png",
         slide: "/img/02.jpg",
         route: "/f1",
-        detail: "Vive emocionantes carreras de F1 en vivo y sus repeticiones.",
+        detail: "Vive emocionantes carreras de F1 en vivo.",
     },
     {
         color: "#85a0c0",
@@ -30,7 +30,7 @@ const data = [
         url: "/img/user3.png",
         slide: "/img/03.jpg",
         route: "/motors",
-        detail: "Carreras de todos los eventos motorsport en vivo al día.",
+        detail: "Carreras de todos los eventos motorsport.",
     },
     {
         color: "#bcb58b",
@@ -68,7 +68,7 @@ const data = [
         route: "/mlb",
         detail: "Vive la MLB en vivo con los eventos del día",
     },
-   /*  {
+    /*  {
         color: "#7a5e75",
         type: "Canales",
         iconColor: "bg-color-lime",
@@ -181,18 +181,15 @@ const ShowSlide = (data) => {
                             </span>
                         </div>
                     </div>
-                    <div className="post-content margin-top display-flex flex-direction-column justify-content-flex-end newsman-object-fit">
-                        <img src={data.props.slide} alt="1" />
-                        <div className="post-title">
-                            <h2 className="no-margin-bottom">
-                                <Link
-                                    to={data.props.route}
-                                    className="external"
-                                >
+                    <div className="post-content margin-top display-flex flex-direction-column newsman-object-fit">
+                        <Link to={data.props.route} className="external">
+                            <img src={data.props.slide} alt="1" />
+                            <div className="post-title">
+                                <h2 className="no-margin-bottom">
                                     {data.props.detail}
-                                </Link>
-                            </h2>
-                        </div>
+                                </h2>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
