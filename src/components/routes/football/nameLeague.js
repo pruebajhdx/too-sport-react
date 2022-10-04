@@ -142,6 +142,12 @@ const nameLeague = (value) => {
     if (value === "afcon") {
         return (value = "Africa Cup of Nations Qual.");
     }
+    if (value === "uyl") {
+        return (value = "Liga Juvenil de la UEFA.");
+    }
+    if (value === "arglf") {
+        return (value = "Liga Argentina");
+    }
     if (value === "undefined") {
         return (value = "Liga profesional de futbol.");
     }
