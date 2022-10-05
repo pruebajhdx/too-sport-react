@@ -11,6 +11,7 @@ import F1 from "./components/routes/f1/F1";
 import Boxing from "./components/routes/boxing/boxing";
 import Motors from "./components/routes/motorsport/Motors";
 
+
 const Router = () => {
     return (
         <BrowserRouter>
