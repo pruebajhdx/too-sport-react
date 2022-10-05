@@ -39,7 +39,7 @@ const data = [
         url: "/img/user4.png",
         slide: "/img/04.jpg",
         route: "/",
-        detail: "Peleas de la UFC y MMA en vivo, eventos del día.",
+        detail: "Peleas de la UFC y MMA en vivo.",
     },
     {
         color: "rgb(2 36 54)",
@@ -57,7 +57,7 @@ const data = [
         url: "/img/user5.png",
         slide: "/img/05.jpg",
         route: "/boxing",
-        detail: "Peleas del mejor boxeo en vivo, eventos del día.",
+        detail: "Peleas del mejor boxeo en vivo.",
     },
     {
         color: "#e44045",
